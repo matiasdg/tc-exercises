@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+---
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: 'jdbc:postgresql://localhost:5432/school?currentSchema=school'
+    username: 'root'
+    password: 'root'
+    test-on-borrow: true
+    validation-query: 'SELECT 1'
+    log-validation-errors: true
+    max-active: 20
+    initial-size: 4
+    autoReconnect: true
+    autoReconnectForPools: true
+    is-connection-validation-required: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQL9Dialect
+      show_sql: true
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+    properties.hibernate.default_schema: school
+
+logging:
+  level:
+    ROOT: ERROR
+    org.springframework: ERROR
+    org.springframework.data: WARN
+    org.springframework.boot.autoconfigure: ERROR
+    org.hibernate: ERROR
+    com.uom.map: INFO
+debug: true

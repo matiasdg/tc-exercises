@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+---
+spring:
+  profiles: local
+logging:
+  level:
+    ROOT: ERROR
+    org.springframework: ERROR
+    org.springframework.data: WARN
+    org.springframework.boot.autoconfigure: ERROR
+    org.hibernate: ERROR
+    com.uom.map: INFO
+debug: true
