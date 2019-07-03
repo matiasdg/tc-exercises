@@ -1,1 +1,1 @@
-# school
+# Teracode exercises
